@@ -1,2 +1,3 @@
 # NFibber
-Ever wondered what the Nth Fibonacci number is?
+Ever wonder what the Nth Fibonacci number is?
+Well, wonder no more!
