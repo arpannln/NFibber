@@ -70,6 +70,11 @@ const greens = [
   "#345200"
 ];
 
+const center = {
+  x: 145,
+  y: 70
+};
+
 const randomGreen = () => {
   return greens[Math.floor(Math.random() * greens.length)];
 
@@ -85,12 +90,12 @@ const updateCanvas = (userInput) => {
 
   ctx.beginPath();
   ctx.strokeStyle = randomGreen();
-  ctx.arc(150, 100, scale * Fibholder[1], 0, 0.5*Math.PI);
+  ctx.arc(center['x'], center['y'], scale * Fibholder[1], Math.PI, 1.5*Math.PI);
   ctx.stroke();
 
   ctx.beginPath();
   ctx.strokeStyle = randomGreen();
-  ctx.arc(150, 100, scale * Fibholder[2], .5*Math.PI, Math.PI);
+  ctx.arc(center['x'], center['y'], scale * Fibholder[2], 1.5*Math.PI, 2*Math.PI);
   ctx.stroke();
 
   while (i <= userInput) {
@@ -99,19 +104,19 @@ const updateCanvas = (userInput) => {
     let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
     switch ( i % 4 ) {
       case 0:
-        ctx.arc(150 + offset, 100 + offset, scale * Fibholder[i], 1.5*Math.PI, 2*Math.PI);
+        ctx.arc(center['x'] - offset, center['y'] - offset, scale * Fibholder[i], 0.5*Math.PI, Math.PI);
         ctx.stroke();
         break;
       case 1:
-        ctx.arc(150, 100 + offset, scale * Fibholder[i], 0, 0.5*Math.PI);
+        ctx.arc(center['x'], center['y'], scale * Fibholder[i], Math.PI, 1.5*Math.PI);
         ctx.stroke();
         break;
       case 2:
-        ctx.arc(150, 100, scale * Fibholder[i], .5*Math.PI, Math.PI);
+        ctx.arc(center['x'], center['y'], scale * Fibholder[i], 1.5*Math.PI, 2*Math.PI);
         ctx.stroke();
         break;
       case 3:
-        ctx.arc(150 + offset, 100, scale * Fibholder[i], Math.PI, 1.5*Math.PI);
+        ctx.arc(center['x'] - offset, center['y'], scale * Fibholder[i], 0, 0.5*Math.PI);
         ctx.stroke();
         break;
     }

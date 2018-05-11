@@ -3,10 +3,11 @@
 }
 
 body {
-  background-color: #76b900;
+  background: url('https://www.kshitijdivakar.com/wp-content/uploads/2018/01/mathematics-wallpaper-4-800x445.png');
   display: flex;
   flex-direction: column;
   margin: auto;
+  text-shadow: 3px 3px black;
 }
 
 h1 {
@@ -14,16 +15,17 @@ h1 {
   margin: auto;
   font-size: 50px;
   color: white;
-  text-shadow: 2px 2px black;
 }
 
 h2 {
+  color: white;
   margin: auto;
 }
 
 input {
   width: 50px;
-  height: 25px;
+  height: 35px;
+  font-size: 20px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -55,8 +57,29 @@ canvas {
   background-color: black;
   width: 700px;
   height: 700px;
+  border: 2px solid white;
   margin: auto;
 }
 .error {
   color: red;
 }
+
+.info {
+  display: flex;
+  color: white;
+  background-color: #416600;
+  font-size: 18px;
+  flex-direction: row;
+  text-shadow: 2px 2px solid black;
+  padding: 10px;
+}
+
+footer {
+  color: white;
+  height: 25px;
+  background-color: black;
+  text-indent: 20px;
+}
+/* .info > h3, .info > img {
+  display: flex;
+} */
