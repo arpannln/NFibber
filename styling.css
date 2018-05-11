@@ -5,6 +5,9 @@ body {
   flex-direction: column;
 }
 
+canvas {
+  background-color: white;
+}
 .error {
   color: red;
 }

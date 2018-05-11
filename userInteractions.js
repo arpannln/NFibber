@@ -50,11 +50,27 @@ const isValidInput = (userInput) => {
 };
 
 const flashError = () => {
-   let answerContainer = document.getElementById('answer');
-   answerContainer.innerHTML = "See why n can't be negative below";
-   answerContainer.classList.add('error');
+  let answerContainer = document.getElementById('answer');
+  answerContainer.innerHTML = "See why n can't be negative below";
+  answerContainer.classList.add('error');
 };
 
-const updateCanvas = () => {
-    
+const updateCanvas = (userInput) => {
+  let canvas = document.getElementById('myCanvas');
+  let ctx = canvas.getContext("2d");
+  //arc(x,y,r,startangle,endangle)
+ //one round of spirals is this
+ //ctx.beginPath();
+// ctx.arc(100,60,1,0,.5*Math.PI);
+// ctx.stroke();
+// ctx.arc(95,50,30,.5*Math.PI, 1*Math.PI);
+// ctx.stroke();
+// ctx.arc(105,45,40, 1*Math.PI, 1.5*Math.PI);
+// ctx.stroke();
+// ctx.arc(115,55,50, 1.5*Math.PI, 2*Math.PI);
+// ctx.stroke();
+
+  for (let i = 0; i <= userInput; i++) {
+    // ctx.arc
+  }
 };
