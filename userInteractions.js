@@ -40,7 +40,7 @@ const updateAnswer = (userInput) => {
   answerContainer.classList.remove('error');
   let answer = returnNthFib(userInput);
 
-  answerContainer.innerHTML = answer;
+  answerContainer.innerHTML = `The ${userInput}th Fibonacci number is... ${answer}`;
 
   return answer;
 };
@@ -55,54 +55,68 @@ const flashError = () => {
   answerContainer.classList.add('error');
 };
 
+
 //this gets a bit tricky
+const greens = [
+  "#76b900",
+  "#85c01c",
+  "#94c838",
+  "#a3d055",
+  "#b2d871",
+  "#68a400",
+  "#5b8f00",
+  "#4e7b00",
+  "#416600",
+  "#345200"
+];
+
+const randomGreen = () => {
+  return greens[Math.floor(Math.random() * greens.length)];
+
+};
 
 const updateCanvas = (userInput) => {
   let canvas = document.getElementById('myCanvas');
   let ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, 500, canvas.height);
-  let i = 1;
-  let scale = 100 / userInput;
+  let scale = 50 / userInput;
+  ctx.lineWidth = 5;
+  let i = 3;
+
   ctx.beginPath();
+  ctx.strokeStyle = randomGreen();
+  ctx.arc(150, 100, scale * Fibholder[1], 0, 0.5*Math.PI);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = randomGreen();
+  ctx.arc(150, 100, scale * Fibholder[2], .5*Math.PI, Math.PI);
+  ctx.stroke();
 
   while (i <= userInput) {
+    ctx.beginPath();
+    ctx.strokeStyle = randomGreen();
     let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
     switch ( i % 4 ) {
       case 0:
-        ctx.arc(250 + offset, 250, scale * Fibholder[i], 1.5*Math.PI, 2*Math.PI);
+        ctx.arc(150 + offset, 100 + offset, scale * Fibholder[i], 1.5*Math.PI, 2*Math.PI);
         ctx.stroke();
         break;
       case 1:
-        console.log(offset);
-        ctx.arc(250, 250, scale * Fibholder[i], 0, 0.5*Math.PI);
+        ctx.arc(150, 100 + offset, scale * Fibholder[i], 0, 0.5*Math.PI);
         ctx.stroke();
         break;
       case 2:
-        ctx.arc(250, 250, scale * Fibholder[i], .5*Math.PI, Math.PI);
+        ctx.arc(150, 100, scale * Fibholder[i], .5*Math.PI, Math.PI);
         ctx.stroke();
         break;
       case 3:
-        ctx.arc(250 + offset, 250 - offset, scale * Fibholder[i], Math.PI, 1.5*Math.PI);
+        ctx.arc(150 + offset, 100, scale * Fibholder[i], Math.PI, 1.5*Math.PI);
         ctx.stroke();
         break;
     }
 
     i += 1;
 
-  }
-  //arc(x,y,r,startangle,endangle)
- //one round of spirals is this
- //ctx.beginPath();
-// ctx.arc(100,60,1,0,.5*Math.PI);
-// ctx.stroke();
-// ctx.arc(95,50,30,.5*Math.PI, 1*Math.PI);
-// ctx.stroke();
-// ctx.arc(105,45,40, 1*Math.PI, 1.5*Math.PI);
-// ctx.stroke();
-// ctx.arc(115,55,50, 1.5*Math.PI, 2*Math.PI);
-// ctx.stroke();
-
-  for (let i = 0; i <= userInput; i++) {
-    // ctx.arc
   }
 };

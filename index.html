@@ -4,17 +4,19 @@
     <meta charset="utf-8">
     <title>NFibber</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Acme|PT+Serif+Caption" rel="stylesheet">
     <script type="text/javascript" src="./userInteractions.js"> </script>
     <link rel="stylesheet" type="text/css" href="styling.css">
 
   </head>
 
   <body>
-    <h1>So, what nth number of Fibonacci perks your interest?</h1>
+    <h1>NFibber</h1>
+    <h2>So, what nth number of Fibonacci perks your interest?</h2>
     <input id="userInput" type="number" name="" value="7" min="0">
     <button onclick="updateVisuals()">Fibber Me!</button>
-    <h2 id="answer">0</h2>
-    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <h2 class="answer" id="answer">0</h2>
+    <canvas id="myCanvas"></canvas>
   </body>
 
 </html>
