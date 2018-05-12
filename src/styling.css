@@ -109,8 +109,8 @@ canvas {
 
 .info {
   display: flex;
-  color: white;
-  background-color: #416600;
+  color: #FDFDFD;
+  background-color: rgba(0, 61, 5);
   margin: 20px 0px;
   font-size: 18px;
   flex-direction: row;
