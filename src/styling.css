@@ -22,6 +22,10 @@ a {
   text-shadow: none;
 }
 
+.take-me {
+  margin-left: 40%;
+}
+
 a:hover {
   color: #228B22;
 }
