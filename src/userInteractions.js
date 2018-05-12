@@ -26,7 +26,7 @@ const updateVisuals = () => {
 };
 
 const centerX = 145;
-const centerY = 80;
+const centerY = 75;
 
 const updateAnswer = (userInput) => {
   let answerContainer = document.getElementById('answer');
@@ -66,7 +66,7 @@ const randomGreen = () => {
 const updateCanvas = (userInput) => {
   let canvas = document.getElementById('myCanvas');
   let ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 500, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   //we want our presentation to scale with the magnitude  of user input
   let scale = 10 / userInput;
