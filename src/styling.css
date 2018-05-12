@@ -61,6 +61,7 @@ canvas {
   height: 700px;
   border: 2px solid white;
   margin: auto;
+  margin-bottom: 30px;
 }
 .error {
   color: red;
@@ -70,6 +71,7 @@ canvas {
   display: flex;
   color: white;
   background-color: #416600;
+  margin-bottom: 20px;
   font-size: 18px;
   flex-direction: row;
   text-shadow: 2px 2px solid black;
