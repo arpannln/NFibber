@@ -17,6 +17,7 @@ const returnNthFib = (n) => {
 const updateVisuals = () => {
   let userInput = document.getElementById('userInput').value;
 
+//upper limit where infinity is always returned so may as well save operations.
   if (userInput > 1476) {
     userInput = '1477';
   }
