@@ -25,7 +25,7 @@ const updateVisuals = () => {
   updateCanvas(userInput);
 };
 
-const centerX = 145;
+const centerX = 150;
 const centerY = 75;
 
 const updateAnswer = (userInput) => {
