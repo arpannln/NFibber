@@ -1,26 +1,20 @@
-
-describe("when Fibonacci is used to peform basic math operations", function(){
+describe("when Fibonacci is used to peform calculations", function(){
 
   //Spec for sum operation
-  it("should be able to calculate sum of 3 and 5", function() {
-      expect(returnNthFib(3,5)).toEqual(8);
+  it("should be able to calculate 3rd Fibonacci", function() {
+      expect(returnNthFib(3)).toEqual(2);
   });
 
   //Spec for multiply operation
-  it("should be able to multiply 10 and 40", function() {
-      expect(calc.multiply(10, 40)).toEqual(400);
+  it("should be able to calculate 5th Fibonacci", function() {
+      expect(returnNthFib(5)).toEqual(5);
   });
-
   //Spec for factorial operation for positive number
-  it("should be able to calculate factorial of 9", function() {
-      expect(calc.factorial(9)).toEqual(362880);
+  it("should return null when input is negative", function() {
+      expect(returnNthFib(-6)).toEqual(null);
   });
 
   //Spec for factorial operation for negative number
-  it("should be able to throw error in factorial operation when the number is negative", function() {
-      expect(function() {
-          calc.factorial(-7)
-      }).toThrowError(Error);
-  });
+
 
 });

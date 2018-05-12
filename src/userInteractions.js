@@ -16,11 +16,11 @@ const returnNthFib = (n) => {
 const buildUpToN = (n) => {
   if ( n <= Fibholder.length - 1 ) return;
 
-  let lastEl = Fibholder[Fibholder.length - 1];
-  let secondLastEl = Fibholder[Fibholder.length - 2];
-  let nextEl = lastEl + secondLastEl;
-
-  Fibholder.push(nextEl);
+  // let lastEl = Fibholder[Fibholder.length - 1];
+  // let secondLastEl = Fibholder[Fibholder.length - 2];
+  // let nextEl = lastEl + secondLastEl;
+  //  next comes from addition of last 2
+  Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
 
   buildUpToN(n);
 };
@@ -53,9 +53,8 @@ const isValidInput = (userInput) => {
 };
 
 const flashError = () => {
-  let answerContainer = document.getElementById('answer');
-  answerContainer.innerHTML = 'Please enter a positive number :)';
-  answerContainer.classList.add('error');
+  let errorHolder = document.getElementById('error-back');
+  errorHolder.style.display = "flex";
 };
 
 //decent shades of green

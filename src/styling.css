@@ -24,7 +24,7 @@ h2 {
 }
 
 input {
-  width: 50px;
+  width: 100px;
   height: 35px;
   font-size: 20px;
   margin: auto;
@@ -63,15 +63,37 @@ canvas {
   margin: auto;
   margin-bottom: 30px;
 }
+
+.error-back {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
 .error {
-  color: red;
+  display: flex;
+  position: fixed;
+  background-color: rgba(256,256,256, 1.0);
+  text-shadow: none;
+  color: black;
+  box-shadow: 5px 5px 5px;
+  border-radius: 5px;
+  padding: 20px;
+  align-items: center;
+  text-indent: 20px;
+  width: 350px;
+  height: 100px;
+  margin-left: 35%;
+  margin-top: 20%;
 }
 
 .info {
   display: flex;
   color: white;
   background-color: #416600;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   font-size: 18px;
   flex-direction: row;
   text-shadow: 2px 2px solid black;
