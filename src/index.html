@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>NFibber</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Acme|PT+Serif+Caption" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme|PT+Serif+Caption|Chicle" rel="stylesheet">
     <script type="text/javascript" src="./userInteractions.js"> </script>
     <link rel="stylesheet" type="text/css" href="styling.css">
 
@@ -13,12 +13,15 @@
   <body>
     <h1>NFibber</h1>
     <h2>So, what nth number of Fibonacci perks your interest?</h2>
-    <input id="userInput" type="number" name="" value="7" min="0">
+    <input id="userInput" type="number" name="" value="0" min="0">
     <button onclick="updateVisuals()">Fibber Me!</button>
-    <h2 class="answer" id="answer">0</h2>
+    <h2>Your heart is looking for...</h2>
+    <h2 class="answer" id="answer"> 0 </h2>
     <canvas id="myCanvas"></canvas>
     <div class="info">
       <p>
+        The above design should help visualize the ratios between the different Fibonacci numbers.
+        <br/> <br/>
         The Fibonacci sequence is a set of numbers that starts with a one or a zero, followed by a one, and proceeds based on the rule that each number (called a Fibonacci number) is equal to the sum of the preceding two numbers. ... F (0) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...
         <br/> <br/>
         This leads us to the Fibonacci spiral which approximates the golden spiral using quarter-circle arcs inscribed in squares of integer Fibonacci-number side, shown for square sizes 1, 1, 2, 3, 5, 8, 13 and 21.
