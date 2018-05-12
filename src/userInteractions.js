@@ -9,24 +9,9 @@ const returnNthFib = (n) => {
   while (Fibholder.length <= n) {
     Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
   }
-  // buildUpToN(n);
 
   return Fibholder[n];
 };
-
-
-//building bottom up so we minimize # of operations
-// const buildUpToN = (n) => {
-//   if ( n <= Fibholder.length - 1 ) return;
-//
-//   // let lastEl = Fibholder[Fibholder.length - 1];
-//   // let secondLastEl = Fibholder[Fibholder.length - 2];
-//   // let nextEl = lastEl + secondLastEl;
-//   //  next comes from addition of last 2
-//   Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
-//
-//   buildUpToN(n);
-// };
 
 //update page based on user interaction and error handle
 const updateVisuals = () => {
@@ -87,31 +72,16 @@ const updateCanvas = (userInput) => {
   let scale = 10 / userInput;
   ctx.lineWidth = 4;
   let i = 1;
+  let angles =[1.5*Math.PI, Math.PI, 0.5*Math.PI, 0];
 
   //use canvas to draw spirals representing Fibonacci numbers.
+  //rotating through Fibnumbers as well as associated angles
   while (i <= userInput) {
     ctx.beginPath();
     ctx.strokeStyle = randomGreen();
     let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
-
-    switch ( i % 4 ) {
-      case 0:
-        ctx.arc(centerX, centerY, scale * Fibholder[i], Math.PI, 0.5*Math.PI, true);
-        ctx.stroke();
-        break;
-      case 1:
-        ctx.arc(centerX, centerY, scale * Fibholder[i], 0.5*Math.PI, 0*Math.PI, true);
-        ctx.stroke();
-        break;
-      case 2:
-        ctx.arc(centerX, centerY, scale * Fibholder[i], 2*Math.PI, 1.5*Math.PI, true);
-        ctx.stroke();
-        break;
-      case 3:
-        ctx.arc(centerX, centerY, scale * Fibholder[i], 1.5*Math.PI, Math.PI, true);
-        ctx.stroke();
-        break;
-    }
+    ctx.arc(centerX, centerY, scale * Fibholder[i], angles[i % 4], angles[ (i+1) % 4], true);
+    ctx.stroke();
 
     i += 1;
   }
