@@ -118,6 +118,7 @@ img {
 }
 
 footer {
+  display: flex;
   color: white;
   height: 25px;
   background-color: black;
