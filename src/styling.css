@@ -51,7 +51,8 @@ input {
 
 button {
   transition: all 1s;
-  background-color: #39FF14;
+  background-color: #228B22;
+  color: white;
   width: 100px;
   height: 45px;
   font-size: 15px;
@@ -61,10 +62,9 @@ button {
 
 button:hover {
   background-color: #228B22;
-  color: white;
   cursor: pointer;
   transform: scale(1.1);
-  box-shadow: 5px 5px 5px;
+  box-shadow: 2px 2px 2px;
 
 }
 
@@ -93,6 +93,7 @@ canvas {
   display: flex;
   position: fixed;
   background-color: rgba(256,256,256, 1.0);
+  font-size: 15px;
   text-shadow: none;
   color: black;
   box-shadow: 5px 5px 5px;

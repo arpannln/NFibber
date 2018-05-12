@@ -16,6 +16,11 @@ const returnNthFib = (n) => {
 //update page based on user interaction and error handle
 const updateVisuals = () => {
   let userInput = document.getElementById('userInput').value;
+
+  if (userInput > 1476) {
+    userInput = '1477';
+  }
+
   if (isValidInput(userInput)) {
     updateAnswer(userInput);
   } else {
@@ -37,7 +42,7 @@ const updateAnswer = (userInput) => {
 };
 
 const isValidInput = (userInput) => {
-  return userInput !== '' && userInput >= 0;
+  return userInput !== '' && userInput >= 0 && !userInput.includes('e');
 };
 
 const flashError = () => {
