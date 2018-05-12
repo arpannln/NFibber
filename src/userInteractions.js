@@ -5,7 +5,7 @@ const returnNthFib = (n) => {
   if ( n < 0 ) {
     return null;
   }
-  
+
   buildUpToN(n);
 
   return Fibholder[n];

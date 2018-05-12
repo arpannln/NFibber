@@ -20,6 +20,7 @@ h1 {
 h2 {
   color: white;
   margin: auto;
+  background-color: black;
 }
 
 input {
@@ -52,6 +53,7 @@ button:hover {
 
 .answer {
   font-size: 35px;
+  background-color: rgba(1,1,1,0);
 }
 canvas {
   background-color: black;
