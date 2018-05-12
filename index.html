@@ -5,6 +5,7 @@
     <title>NFibber</title>
     <meta name="viewport" content="width=device-width, initial-scale=0.4">
     <link href="https://fonts.googleapis.com/css?family=Acme|PT+Serif+Caption|Chicle" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.polyfills.min.js"></script>
     <script type="text/javascript" src="src/userInteractions.js"> </script>
     <link rel="stylesheet" type="text/css" href="src/styling.css">
 
@@ -19,12 +20,16 @@
         This leads us to the Fibonacci spiral which approximates the golden spiral using quarter-circle arcs inscribed in squares of integer Fibonacci-number side, shown for square sizes 1, 1, 2, 3, 5, 8, 13 and 21.
         <br/> <br/>
         Below, feel free to further discover particular Fibonacci values as well as a similar visualization tool.
+        <br/> <br/>
+        <a data-scroll href="#input">Take Me There!</a>
       </p>
       <img src="https://www.geeksforgeeks.org/wp-content/uploads/fibonacci-sequence-660x416.png" alt="">
     </div>
-    <h2>So, which Nth number of Fibonacci perks your interest?</h2>
-    <input id="userInput" type="number" name="" value="" min="0">
-    <button onclick="updateVisuals()">Fibber Me!</button>
+    <h2 id="input">So, which Nth number of Fibonacci perks your interest?</h2>
+    <div class="user-interaction">
+      <input id="userInput" type="number" name="" value="" min="0">
+      <button onclick="updateVisuals()">Fibber Me!</button>
+    </div>
     <h2>You are looking for...</h2>
     <div class="error-back" id="error-back" onclick="this.style.display='none';">
       <h3 class="error" id="error"> Please Enter a Positive Number :) </h3>
@@ -32,6 +37,9 @@
     <h2 class="answer" id="answer"> ? </h2>
     <canvas id="myCanvas"></canvas>
     <footer> Arpan NLN </footer>
+    <script>
+    	var scroll = new SmoothScroll('a[href*="#"]')
+    </script>
   </body>
 
 </html>
