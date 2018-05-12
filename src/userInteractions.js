@@ -17,12 +17,11 @@ const returnNthFib = (n) => {
 const updateVisuals = () => {
   let userInput = document.getElementById('userInput').value;
 
-//upper limit where infinity is always returned so may as well save operations.
-  if (userInput > 1476) {
-    userInput = '1477';
-  }
-
   if (isValidInput(userInput)) {
+    //upper limit where infinity is always returned so may as well save operations.
+    if (userInput > 1476) {
+      userInput = '1477';
+    }
     updateAnswer(userInput);
   } else {
     flashError();
@@ -52,21 +51,18 @@ const flashError = () => {
 };
 
 //decent shades of green
-const greens = [
-  '#76b900',
-  '#85c01c',
-  '#94c838',
-  '#a3d055',
-  '#b2d871',
-  '#68a400',
-  '#5b8f00',
-  '#4e7b00',
-  '#416600',
-  '#345200'
+const colors = [
+  '#93ff68',
+  '#e4ff55',
+  '#ffb543',
+  '#ff5a5a',
+  '#c660ff',
+  '#0099cc',
+  '#FF1493'
 ];
 
-const randomGreen = () => {
-  return greens[Math.floor(Math.random() * greens.length)];
+const randomColor = () => {
+  return colors[Math.floor(Math.random() * colors.length)];
 };
 
 const updateCanvas = (userInput) => {
@@ -78,14 +74,14 @@ const updateCanvas = (userInput) => {
    let i = 2;
 
    ctx.beginPath();
-   ctx.strokeStyle = randomGreen();
+   ctx.strokeStyle = randomColor();
    ctx.arc(centerX, centerY, scale * Fibholder[1], 2*Math.PI, 1.5*Math.PI, true);
    ctx.stroke();
 
    while (i <= userInput) {
      let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
      ctx.beginPath();
-     ctx.strokeStyle = randomGreen();
+     ctx.strokeStyle = randomColor();
      switch ( i % 4 ) {
        case 0:
          ctx.arc(centerX, centerY - offset, scale * Fibholder[i], 0.5*Math.PI, 0, true);
@@ -108,27 +104,4 @@ const updateCanvas = (userInput) => {
      i += 1;
 
    }
-
-// const updateCanvas = (userInput) => {
-//   let canvas = document.getElementById('myCanvas');
-//   let ctx = canvas.getContext('2d');
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-//
-//   //we want our presentation to scale with the magnitude  of user input
-//   let scale = 10 / userInput;
-//   ctx.lineWidth = 4;
-//   let i = 1;
-//   let angles =[1.5*Math.PI, Math.PI, 0.5*Math.PI, 0];
-//
-//   //use canvas to draw spirals representing Fibonacci numbers.
-//   //rotating through Fibnumbers as well as associated angles
-//   while (i <= userInput) {
-//     ctx.beginPath();
-//     ctx.strokeStyle = randomGreen();
-//     let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
-//     ctx.arc(centerX, centerY, scale * Fibholder[i], angles[i % 4], angles[ (i+1) % 4], true);
-//     ctx.stroke();
-//
-//     i += 1;
-//   }
 };
