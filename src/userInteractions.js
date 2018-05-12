@@ -6,24 +6,27 @@ const returnNthFib = (n) => {
     return null;
   }
 
-  buildUpToN(n);
+  while (Fibholder.length <= n) {
+    Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
+  }
+  // buildUpToN(n);
 
   return Fibholder[n];
 };
 
 
 //building bottom up so we minimize # of operations
-const buildUpToN = (n) => {
-  if ( n <= Fibholder.length - 1 ) return;
-
-  // let lastEl = Fibholder[Fibholder.length - 1];
-  // let secondLastEl = Fibholder[Fibholder.length - 2];
-  // let nextEl = lastEl + secondLastEl;
-  //  next comes from addition of last 2
-  Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
-
-  buildUpToN(n);
-};
+// const buildUpToN = (n) => {
+//   if ( n <= Fibholder.length - 1 ) return;
+//
+//   // let lastEl = Fibholder[Fibholder.length - 1];
+//   // let secondLastEl = Fibholder[Fibholder.length - 2];
+//   // let nextEl = lastEl + secondLastEl;
+//   //  next comes from addition of last 2
+//   Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
+//
+//   buildUpToN(n);
+// };
 
 //update page based on user interaction and error handle
 const updateVisuals = () => {
