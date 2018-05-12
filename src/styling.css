@@ -22,6 +22,10 @@ a {
   text-shadow: none;
 }
 
+a:hover {
+  color: #228B22;
+}
+
 h2 {
   color: white;
   margin: auto;
@@ -41,6 +45,7 @@ input {
 }
 
 button {
+  transition: all 1s;
   background-color: #39FF14;
   width: 100px;
   height: 45px;
@@ -50,7 +55,6 @@ button {
 }
 
 button:hover {
-  transition: all 1s;
   background-color: #228B22;
   color: white;
   cursor: pointer;
