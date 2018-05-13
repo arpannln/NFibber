@@ -6,19 +6,21 @@ const returnNthFib = (n) => {
     return null;
   }
 
-  if (n < 2) {
-    return Fibholder[n];
+// if last element is infinity and we are asking a higher calculation
+// for no point going further with calculations
+// would scale with upgraded hardware
+  if (Fibholder[Fibholder.length - 1] === Infinity && n >= Fibholder.length) {
+    return Infinity;
   }
 
   while (Fibholder.length <= n) {
     Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
-    //save operations once hardware only returns infinity
     if (Fibholder[Fibholder.length - 1] === Infinity) {
-      break;
+      return Infinity;
     }
   }
 
-  return Fibholder[n] || Fibholder[Fibholder.length - 1];
+  return Fibholder[n];
 };
 
 //update page based on user interaction and error handle
@@ -26,12 +28,12 @@ const updateVisuals = () => {
   let userInput = document.getElementById('userInput').value;
 
   if (isValidInput(userInput)) {
-    updateAnswer(userInput);
+    updateAnswer(Number(userInput));
   } else {
     flashError();
     return;
   }
-  updateCanvas(userInput);
+  updateCanvas(Number(userInput));
 };
 
 const centerX = 250;
@@ -88,7 +90,7 @@ const updateCanvas = (userInput) => {
    ctx.stroke();
 
    while (i <= userInput) {
-     //until hardware gets better save operations.
+     //until hardware gets upgraded save operations.
      if (Fibholder[i] === Infinity) {
        break;
      }
