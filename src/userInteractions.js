@@ -8,9 +8,13 @@ const returnNthFib = (n) => {
 
   while (Fibholder.length <= n) {
     Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
+    //save operations if we are just going to keep returning infinity
+    if (Fibholder[Fibholder.length - 1] === Infinity) {
+      break;
+    }
   }
 
-  return Fibholder[n];
+  return Fibholder[n] || Fibholder[Fibholder.length - 1];
 };
 
 //update page based on user interaction and error handle
@@ -18,10 +22,6 @@ const updateVisuals = () => {
   let userInput = document.getElementById('userInput').value;
 
   if (isValidInput(userInput)) {
-    //upper limit where infinity is always returned so may as well save operations.
-    if (userInput > 1476) {
-      userInput = '1477';
-    }
     updateAnswer(userInput);
   } else {
     flashError();
@@ -84,12 +84,17 @@ const updateCanvas = (userInput) => {
    ctx.stroke();
 
    while (i <= userInput) {
+     //until hardware gets better save operations.
+     if (Fibholder[i] === Infinity) {
+       break;
+     }
      //#proprietarycode
      //these two variables adjust for Canvas's lame way of drawing circles
      //offset to adjust radius
      //scaledRotationReduction to adjust for degrees
      let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
      let scaledRotationReduction =  i * Math.PI / 360;
+
 
      ctx.beginPath();
      ctx.strokeStyle = randomColor();
