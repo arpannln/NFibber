@@ -74,8 +74,6 @@ button:hover {
 }
 canvas {
   background-color: black;
-  width: 500px;
-  height: 500px;
   border: 2px solid white;
   margin: auto;
   margin-bottom: 30px;

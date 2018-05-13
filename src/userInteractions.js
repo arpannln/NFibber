@@ -6,9 +6,13 @@ const returnNthFib = (n) => {
     return null;
   }
 
+  if (n < 2) {
+    return Fibholder[n];
+  }
+
   while (Fibholder.length <= n) {
     Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
-    //save operations if we are just going to keep returning infinity
+    //save operations once hardware only returns infinity
     if (Fibholder[Fibholder.length - 1] === Infinity) {
       break;
     }
@@ -30,8 +34,8 @@ const updateVisuals = () => {
   updateCanvas(userInput);
 };
 
-const centerX = 150;
-const centerY = 75;
+const centerX = 250;
+const centerY = 250;
 
 const updateAnswer = (userInput) => {
   let answerContainer = document.getElementById('answer');
@@ -74,8 +78,8 @@ const updateCanvas = (userInput) => {
    ctx.clearRect(0, 0, 500, canvas.height);
 
    //need a scale to optimize visuals
-   let scale = 9 / userInput;
-   ctx.lineWidth = 5;
+   let scale = 25/userInput;
+   ctx.lineWidth = 8;
    let i = 2;
 
    ctx.beginPath();
@@ -94,7 +98,6 @@ const updateCanvas = (userInput) => {
      //scaledRotationReduction to adjust for degrees
      let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
      let scaledRotationReduction =  i * Math.PI / 360;
-
 
      ctx.beginPath();
      ctx.strokeStyle = randomColor();
