@@ -55,7 +55,18 @@ const isValidInput = (userInput) => {
 
 const flashError = () => {
   let errorHolder = document.getElementById('error-back');
+  let userInput = document.getElementById('userInput');
+  userInput.value = "";
   errorHolder.style.display = "flex";
+
+//user friendly way of removing the error message on top of being able to click out
+  document.addEventListener('keydown', removeError, false);
+};
+
+const removeError = () => {
+  let errorHolder = document.getElementById('error-back');
+  errorHolder.style.display = "none";
+  document.removeEventListener('keydown', removeError, false);
 };
 
 //decent shades of green
