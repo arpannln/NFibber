@@ -5,13 +5,13 @@ Well, wonder no more!
 <a href="https://arpannln.github.io/NFibber/">Live</a>
 
 # Features
-![Info](http://res.cloudinary.com/arpannln/image/upload/v1526152146/Screen_Shot_2018-05-12_at_12.06.47_PM.png)
+![Info](http://res.cloudinary.com/arpannln/image/upload/v1526174715/Screen_Shot_2018-05-12_at_6.13.50_PM.png)
 
 * Defines purpose of site
 * Defines the Fibonacci sequence
 * Ties in Golden Spiral
 
-![Home](http://res.cloudinary.com/arpannln/image/upload/v1526152150/Screen_Shot_2018-05-12_at_12.07.54_PM.png)
+![Home](http://res.cloudinary.com/arpannln/image/upload/v1526174613/Screen_Shot_2018-05-12_at_6.23.02_PM.png)
 
 * User is able to enter n and retrieve the nth value from the Fibonacci sequence
 * User is warned about invalid ns
