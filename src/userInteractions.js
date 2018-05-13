@@ -74,7 +74,7 @@ const updateCanvas = (userInput) => {
    ctx.clearRect(0, 0, 500, canvas.height);
 
    //need a scale to optimize visuals
-   let scale = 10 / userInput;
+   let scale = 9 / userInput;
    ctx.lineWidth = 5;
    let i = 2;
 
@@ -84,8 +84,11 @@ const updateCanvas = (userInput) => {
    ctx.stroke();
 
    while (i <= userInput) {
+     //#proprietarycode
+     //these two variables adjust for Canvas's lame way of drawing circles
+     //offset to adjust radius
+     //scaledRotationReduction to adjust for degrees
      let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
-     //this variable is to help scale the length of the arcs as i increases to avoid overlap
      let scaledRotationReduction =  i * Math.PI / 360;
 
      ctx.beginPath();
