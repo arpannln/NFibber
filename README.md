@@ -5,7 +5,7 @@ Well, wonder no more!
 <a href="https://arpannln.github.io/NFibber/">Live</a>
 
 # Features
-![Info](http://res.cloudinary.com/arpannln/image/upload/v1526174715/Screen_Shot_2018-05-12_at_6.13.50_PM.png)
+![Info](http://res.cloudinary.com/arpannln/image/upload/v1526176302/Screen_Shot_2018-05-12_at_6.51.09_PM.png)
 
 * Defines purpose of site
 * Defines the Fibonacci sequence
