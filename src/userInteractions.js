@@ -82,25 +82,24 @@ const updateCanvas = (userInput) => {
 
    while (i <= userInput) {
      let offset = scale * (Fibholder[i] - Fibholder[i - 1]);
-     let scaledRotationReduction = 0.04 * Math.PI/scale;
-     scaledRotationReduction = 0;
+
      ctx.beginPath();
      ctx.strokeStyle = randomColor();
      switch ( i % 4 ) {
        case 0:
-         ctx.arc(centerX, centerY - offset, scale * Fibholder[i], 0.5*Math.PI - scaledRotationReduction, 0 + scaledRotationReduction, true);
+         ctx.arc(centerX, centerY - offset, scale * Fibholder[i], 0.5*Math.PI, 0, true);
          ctx.stroke();
          break;
        case 1:
-         ctx.arc(centerX - offset, centerY, scale * Fibholder[i], 2*Math.PI - scaledRotationReduction, 1.5*Math.PI + scaledRotationReduction, true);
+         ctx.arc(centerX - offset, centerY, scale * Fibholder[i], 2*Math.PI, 1.5*Math.PI, true);
          ctx.stroke();
          break;
        case 2:
-         ctx.arc(centerX, centerY + offset, scale * Fibholder[i], 1.5*Math.PI - scaledRotationReduction, Math.PI + scaledRotationReduction, true);
+         ctx.arc(centerX, centerY + offset, scale * Fibholder[i], 1.5*Math.PI, Math.PI, true);
          ctx.stroke();
          break;
        case 3:
-         ctx.arc(centerX + offset, centerY, scale * Fibholder[i], Math.PI - scaledRotationReduction, 0.5*Math.PI + scaledRotationReduction, true);
+         ctx.arc(centerX + offset, centerY, scale * Fibholder[i], Math.PI, 0.5*Math.PI, true);
          ctx.stroke();
          break;
      }
