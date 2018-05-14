@@ -9,15 +9,12 @@ const returnNthFib = (n) => {
 // if last element is infinity and we are asking a higher calculation
 // for no point going further with calculations
 // would scale with upgraded hardware
-  if (Fibholder[Fibholder.length - 1] === Infinity && n >= Fibholder.length) {
-    return Infinity;
-  }
 
   while (Fibholder.length <= n) {
-    Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
     if (Fibholder[Fibholder.length - 1] === Infinity) {
       return Infinity;
     }
+    Fibholder.push(Fibholder[Fibholder.length - 1] + Fibholder[Fibholder.length - 2]);
   }
 
   return Fibholder[n];
