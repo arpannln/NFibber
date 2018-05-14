@@ -63,9 +63,9 @@ while (i <= userInput) {
 1. Validation of User Input (scientific notation, leading zeroes, negative numbers)
      * Regex OP 
 2. Scalability of code. Compute power would stop at roughly N = 1500. 
-     * Addressed this issue as well as designed code such that if better hardware were to be introduced, the software is flexible enough        to enough to grow with the hardware without change.
+     * Addressed this issue as well as designed code such that if better hardware were to be introduced, the software is flexible enough        to grow with the hardware without change. (e.g. 64 bits to 128 bits)
 3. SPIRALS
-     * I know I am not terrible with math but there was something fishy going on with Canvas that was causing overlapping issues
+     * I know I am not terrible with math so I believe there was something fishy going on with Canvas that was causing overlapping issues
      * I did reduce these to some extent but hopefully I can come up with a perfect solution in the near future
 
 # Possible Future Features 
