@@ -72,3 +72,4 @@ while (i <= userInput) {
 1. Allow user to directly interact with the visual presentation
 2. Toss out my algorithm and pull data from outside sources to improve performance
 3. Add Golden Spiral manipulation
+4. Expand Test Coverage beyond its current state
