@@ -1,15 +1,14 @@
 //initialize global array to memoize our solutions
-var Fibholder = [0, 1];
+const Fibholder = [0, 1];
 
 const returnNthFib = (n) => {
   if ( n < 0 ) {
     return null;
   }
 
-// if last element is infinity and we are asking a higher calculation
-// for no point going further with calculations
+// if last element is infinity and we are asking for a higher calculation
+// no point going further with calculations
 // would scale with upgraded hardware
-
   while (Fibholder.length <= n) {
     if (Fibholder[Fibholder.length - 1] === Infinity) {
       return Infinity;
@@ -66,7 +65,7 @@ const removeError = () => {
   document.removeEventListener('keydown', removeError, false);
 };
 
-//decent shades of green
+//fruity colors of rainbow
 const colors = [
   '#93ff68',
   '#e4ff55',
