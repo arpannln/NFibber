@@ -113,23 +113,19 @@ const updateCanvas = (userInput) => {
      switch ( i % 4 ) {
        case 0:
          ctx.arc(centerX, centerY - offset, scale * Fibholder[i], 0.5*Math.PI - scaledRotationReduction, 0 + scaledRotationReduction, true);
-         ctx.stroke();
          break;
        case 1:
          ctx.arc(centerX - offset, centerY, scale * Fibholder[i], 2*Math.PI - scaledRotationReduction, 1.5*Math.PI + scaledRotationReduction, true);
-         ctx.stroke();
          break;
        case 2:
          ctx.arc(centerX, centerY + offset, scale * Fibholder[i], 1.5*Math.PI - scaledRotationReduction, Math.PI + scaledRotationReduction, true);
-         ctx.stroke();
          break;
        case 3:
          ctx.arc(centerX + offset, centerY, scale * Fibholder[i], Math.PI - scaledRotationReduction, 0.5*Math.PI + scaledRotationReduction, true);
-         ctx.stroke();
          break;
      }
 
+     ctx.stroke();
      i += 1;
-
    }
 };
